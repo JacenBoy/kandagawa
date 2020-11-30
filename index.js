@@ -1,17 +1,20 @@
 const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
 const net = require("net");
+const WebSocket = require("ws");
 const irsdk = require("node-irsdk");
 
 const config = require("./config.json");
 
 const iracing = irsdk.init({telemetryUpdateInterval: config.poll});
-const server = new net.Server();
+//const server = new net.Server();
+
+const server = new WebSocket.Server({port: config.port});
 
 server.clients = new Set();
 server.broadcast = (data) => {
   for (const client of server.clients) {
-    client.write(data);
+    client.send(data);
   }
 };
 
@@ -26,7 +29,7 @@ server.broadcast = (data) => {
     server.on(eventName, event.bind(null, server));
   });
 
-  server.listen(config.port);
+  //server.listen(config.port);
 
   // Load events for our iRacing listener
   const irFiles = await readdir("./iracing/");

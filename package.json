@@ -17,6 +17,7 @@
     "node": "8.17.0"
   },
   "dependencies": {
-    "node-irsdk": "^2.1.6"
+    "node-irsdk": "^2.1.6",
+    "ws": "^7.4.0"
   }
 }
