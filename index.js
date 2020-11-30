@@ -6,7 +6,7 @@ const irsdk = require("node-irsdk");
 
 const config = require("./config.json");
 
-const iracing = irsdk.init({telemetryUpdateInterval: config.poll});
+const iracing = irsdk.init({telemetryUpdateInterval: config.telemetryPoll});
 //const server = new net.Server();
 
 const server = new WebSocket.Server({port: config.port});
