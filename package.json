@@ -1,0 +1,22 @@
+{
+  "name": "kandagawa",
+  "version": "1.0.0",
+  "description": "A remote command line interface for iRacing written in Node.",
+  "main": "index.js",
+  "scripts": {
+    "install": "node ./index.js",
+    "debug": "nodemon --inspect ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "iRacing"
+  ],
+  "author": "JacenBoy <james@jacenboy.com>",
+  "license": "GPL-3.0",
+  "engines": {
+    "node": "8.17.0"
+  },
+  "dependencies": {
+    "node-irsdk": "^2.1.6"
+  }
+}
