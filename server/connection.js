@@ -7,6 +7,10 @@ module.exports = async (server, conn) => {
     try {
       data = JSON.parse(data.trim());
       console.log(data);
+      if (data.command == "ping") {
+        console.log("Received ping");
+        server.broadcast(JSON.stringify({"type": "ping"}));
+      }
     } catch (ex) {
       // ¯\_(ツ)_/¯
     }
