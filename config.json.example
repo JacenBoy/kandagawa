@@ -1,0 +1,6 @@
+{
+  "port": 4040,
+  "password": "changeme",
+  "telemetryPoll": 500,
+  "sessionPoll": 2000
+}
